@@ -14,7 +14,8 @@ function FoodList() {
             .catch(error => {
                 console.error('Error fetching foods:', error);
             });
-    }, []);
+    }, [token]);
+
 
     return (
         <ul>

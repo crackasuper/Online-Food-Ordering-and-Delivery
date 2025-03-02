@@ -1,19 +1,26 @@
-import logo from './logo.svg';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar'; // Importing the Navbar component
+
+
 import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import FoodList from './pages/FoodList';
-
+import FoodList from './components/FoodList';
+import Registration from './pages/Registration';
 
 function App() {
   return (
-      <Router>
-          <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/foods" component={FoodList} />
-          </Switch>
-      </Router>
+    <Router>
+      <Navbar /> {/* Adding the Navbar component */}
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/foods" element={<FoodList />} />
+      </Routes>
+    </Router>
   );
 }
 
