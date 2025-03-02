@@ -3,12 +3,16 @@ import axios from 'axios';
 import './Registration.css';
 
 const Registration = () => {
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        password2: ''
-    });
+const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    password2: '',
+    phone: '',
+    city: ''
+});
+
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -42,14 +46,42 @@ const Registration = () => {
                 {error && <p className="error-message">{error}</p>}
                 {success && <p className="success-message">{success}</p>}
 
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={formData.username}
-                    onChange={handleChange}
-                    required
-                />
+<input
+    type="text"
+    name="firstName"
+    placeholder="First Name"
+    value={formData.firstName}
+    onChange={handleChange}
+    required
+/>
+
+<input
+    type="text"
+    name="lastName"
+    placeholder="Last Name"
+    value={formData.lastName}
+    onChange={handleChange}
+    required
+/>
+
+<input
+    type="text"
+    name="phone"
+    placeholder="Phone"
+    value={formData.phone}
+    onChange={handleChange}
+    required
+/>
+
+<input
+    type="text"
+    name="city"
+    placeholder="City"
+    value={formData.city}
+    onChange={handleChange}
+    required
+/>
+
 
                 <input
                     type="email"
